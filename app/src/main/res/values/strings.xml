@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Amcon Soft</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="website">Website</string>
+    <string name="company">Company</string>
+    <string name="callback_url">https://instagram.com/</string>
+    <string name="client_id">your_client_id</string>
+    <string name="redirect_url">https://instagram.com/</string>
+    <string name="base_url">https://api.instagram.com/</string>
+    <string name="get_user_info_url">https://api.instagram.com/v1/users/self/?access_token=</string>
+    <string name="facebook_app_id">436916970362245</string>
+    <string name="fb_login_protocol_scheme">fb436916970362245</string>
+    <string name="login">Email/Mobile</string>
+    <string name="password">Password</string>
+
+
+
+</resources>
