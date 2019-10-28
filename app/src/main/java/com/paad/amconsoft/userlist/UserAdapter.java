@@ -78,7 +78,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         private LinearLayout item;
 
         private TextView userName;
-        private TextView userEmail;
 
         MyViewHolder(final View itemView) {
 
@@ -87,7 +86,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             item = itemView.findViewById(R.id.user_item);
 
             userName = itemView.findViewById(R.id.user_name);
-            userEmail = itemView.findViewById(R.id.user_email);
+
 
 
         }
@@ -96,8 +95,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         public void onBind(User user) {
 
             userName.setText(user.getName());
-            userEmail.setText(user.getEmail());
-
 
             final String name = user.getName();
 

@@ -76,6 +76,9 @@ dependencies {
     implementation "android.arch.navigation:navigation-fragment:$nav_version"
     implementation "android.arch.navigation:navigation-ui:$nav_version"
 
+    def drawerlayout_version = "1.0.0"
+    implementation "androidx.drawerlayout:drawerlayout:$drawerlayout_version"
+
 
 
 

@@ -2,17 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/monsoon"
-    >
+    android:background="@color/monsoon">
 
 
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp">
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/one"
-            android:layout_marginTop="15dp"
-            >
+            android:layout_toRightOf="@+id/email"
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="left|center"
+            android:layout_gravity="center"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/one"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp">
 
 
         <TextView
@@ -22,129 +49,139 @@
             android:text="@string/address"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_marginLeft="15dp"
-            />
+            android:gravity="left"/>
 
         <TextView
             android:id="@+id/_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/address"
-            android:textSize="14dp" />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/two"
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/one"
-           >
+            android:layout_toRightOf="@+id/address"
+            android:textSize="16dp"
+            android:gravity="left|center"
+            android:layout_marginLeft="20dp"
+
+            android:layout_gravity="center"
+
+
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/two"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp">
 
         <TextView
             android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/phone"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_marginLeft="15dp"
-            />
+            android:gravity="left"/>
 
         <TextView
             android:id="@+id/_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_toRightOf="@id/phone"
-            android:textSize="14dp" />
-
-        </RelativeLayout>
-
-
-
-        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/three"
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/two"
-          >
+            android:layout_toRightOf="@id/phone"
+            android:textSize="16dp"
+            android:gravity="left|center"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
 
 
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/fourth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/three"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        >
 
 
         <TextView
             android:id="@+id/website"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
             android:text="@string/website"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_marginLeft="15dp"
+            android:gravity="left"
             />
 
         <TextView
             android:id="@+id/_website"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_toRightOf="@id/website"
-            android:textSize="14dp" />
-
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fourth"
-            android:layout_below="@id/three"
-           >
+            android:layout_toRightOf="@id/website"
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="left|center"
+            android:layout_gravity="center"
+
+
+            />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fourth"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+
+        >
 
 
         <TextView
             android:id="@+id/company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/company"
             android:textSize="16dp"
             android:textStyle="bold"
-            android:layout_marginLeft="15dp"
+            android:gravity="left"
             />
 
         <TextView
             android:id="@+id/_company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="9dp"
-            android:layout_toRightOf="@id/company"
-            android:textSize="14dp" />
-
-        </RelativeLayout>
-
-
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/map"
-            android:layout_below="@+id/fourth"
-            android:layout_marginTop="15dp"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/company"
+            android:textSize="16dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="left|center"
+            android:layout_gravity="center"
+            />
 
-             />
+    </RelativeLayout>
 
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/five"
+        android:layout_marginTop="15dp"
+
+        />
 
 
 </RelativeLayout>

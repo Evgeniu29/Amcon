@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    android:background="@drawable/side_nav_bar"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
     android:orientation="vertical"
-    android:paddingBottom="15dp"
     android:paddingLeft="15dp"
-    android:paddingRight="15dp"
     android:paddingTop="15dp"
-    android:gravity="center"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:id="@+id/header">
+    android:paddingRight="15dp"
+    android:paddingBottom="15dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:paddingTop="15dp"
         />
 
     <TextView
-        android:layout_below="@id/imageView"
         android:id="@+id/fullName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:text="Full Name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/textView"
-        android:layout_below="@id/fullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email" />
+        android:layout_below="@id/imageView"
+        android:paddingTop="10dp"
+
+        />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullName"
+        android:layout_marginTop="10dp"
+
+        />
 
 
 

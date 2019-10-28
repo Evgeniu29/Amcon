@@ -37,7 +37,10 @@
         <activity android:name=".DetailActivity"></activity>
 
 
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:noHistory="true"
+
+          >
 
         </activity>
 

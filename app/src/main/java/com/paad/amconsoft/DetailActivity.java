@@ -23,15 +23,8 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
 
-    TextView  address;
 
-    TextView phone;
-
-    TextView website;
-
-    TextView company;
-
-    String name;
+    TextView email, address, phone, website, company;
 
     LatLng newlatlng;
 
@@ -55,6 +48,7 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
         mapFragment.getMapAsync(this);
 
+        email = (TextView)findViewById(R.id._email);
         address  = (TextView) findViewById(R.id._address);
         phone = (TextView) findViewById(R.id._phone);
         website = (TextView) findViewById(R.id._website);
@@ -62,11 +56,13 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 
         Intent intent = getIntent();
 
-        String test = "test";
+        String name;
 
         name = intent.getStringExtra("name");
 
         user = database.getUserDAO().getUser(name);
+
+        email.setText(user.getEmail());
 
         address.setText(user.getAddress().getFullAddress());
 

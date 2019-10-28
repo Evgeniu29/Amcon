@@ -40,11 +40,12 @@ public class LoginActivity extends AppCompatActivity {
         private CallbackManager callbackManager;
         SharedPreferences sharedpreferences;
 
-        String MyPREFERENCES;
+
+    String MyPREFERENCES;
 
         SharedPreferences.Editor editor;
 
-        String email, first_name, last_name, image_url, id;
+        String email, first_name, last_name, image_url, credentials;
 
     public static final String PREF_LOGIN = "LOGIN_PREF";
     public static final String KEY_CREDENTIALS = "LOGIN_CREDENTIALS";
@@ -75,17 +76,25 @@ public class LoginActivity extends AppCompatActivity {
                         public void onSuccess(LoginResult loginResult) {
 
                             editor = getSharedPreferences(PREF_LOGIN, MODE_PRIVATE).edit();
-                            editor.putString(KEY_CREDENTIALS, "DUMMY CREDENTIALS");
+
+                            String fullName = first_name+ " " + last_name;
+
+
+                            editor.putString("Photo", image_url);
+                            editor.putString("Full name", fullName);
+                            editor.putString("Email", email);
+                            editor.putString("Credentials", KEY_CREDENTIALS);
+
                             editor.commit();
+
+                          Intent  intent = new Intent(getApplicationContext(), MainActivity.class);
+
+                            startActivity(intent);
 
                         }
 
                         @Override
                         public void onCancel() {
-
-                            editor = getSharedPreferences(PREF_LOGIN, MODE_PRIVATE).edit();
-                            editor.clear();
-                            editor.commit();
 
                         }
 
@@ -106,11 +115,14 @@ public class LoginActivity extends AppCompatActivity {
         AccessTokenTracker tokenTracker = new AccessTokenTracker() {
                 @Override
                 protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-                        if (currentAccessToken == null) {
-                                setDefault();
+                    if (currentAccessToken == null) {
+                        setDefault();
 
-                        } else
-                                loadUserProfile(currentAccessToken);
+
+
+                    } else
+
+                    loadUserProfile(currentAccessToken);
 
                 }
         };
@@ -133,13 +145,9 @@ public class LoginActivity extends AppCompatActivity {
 
                                         Glide.with(LoginActivity.this).load(image_url).into(circleImageView);
 
-                                        editor = getSharedPreferences(PREF_LOGIN, MODE_PRIVATE).edit();
 
 
-                                        editor.putString("Email", email);
-                                        editor.putString("Full name", first_name + last_name);
-                                        editor.putString("Photo", image_url);
-                                        editor.commit();
+
 
 
                                 } catch (JSONException e) {
@@ -158,9 +166,6 @@ public class LoginActivity extends AppCompatActivity {
                 request.executeAsync();
 
 
-                Intent intent = new Intent(this, MainActivity.class);
-
-                startActivity(intent);
 
 
         }
@@ -173,10 +178,12 @@ public class LoginActivity extends AppCompatActivity {
 
         }
 
-       void setDefault(){
-                txtName.setText(getResources().getString(R.string.login));
-                txtEmail.setText(getResources().getString(R.string.password));
-                Glide.with(LoginActivity.this).load(defaultIImage).into(circleImageView);
+       void setDefault() {
 
-        }
+
+               txtName.setText(getResources().getString(R.string.login));
+               txtEmail.setText(getResources().getString(R.string.password));
+               Glide.with(LoginActivity.this).load(defaultIImage).into(circleImageView);
+
+       }
 }

@@ -13,6 +13,7 @@
     <string name="fb_login_protocol_scheme">fb436916970362245</string>
     <string name="login">Email/Mobile</string>
     <string name="password">Password</string>
+    <string name="email">Email</string>
 
 
 
