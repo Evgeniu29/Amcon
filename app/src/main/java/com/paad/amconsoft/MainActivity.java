@@ -94,21 +94,20 @@ public class  MainActivity extends AppCompatActivity implements TransferBetweenF
 
         int id = item.getItemId();
 
+        item.setChecked(true);
+
         if (id == R.id.logout) {
 
-            item.setChecked(true);
 
-            editor = this.getSharedPreferences(PREF_LOGIN, MODE_PRIVATE).edit();
+            onBackPressed();
 
-            editor.clear();
+        }
 
-            editor.commit();
-
-
-                finish();
+        else if (id == R.id.exit){
+            AppExit();
+        }
 
 
-            }
 
 
 
@@ -119,5 +118,15 @@ public class  MainActivity extends AppCompatActivity implements TransferBetweenF
         return true;
     }
 
+    public void AppExit()
+    {
+        this.finish();
+        Intent intent= new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
 
 }
