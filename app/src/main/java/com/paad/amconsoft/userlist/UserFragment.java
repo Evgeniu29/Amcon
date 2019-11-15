@@ -44,14 +44,14 @@ public class UserFragment extends Fragment implements UserContract.View {
 
 
 
-    public void setListData(List<User> _userList) {
+    public void setListData(List<User> userList) {
         //if data changed, set new list to adapter of recyclerview
 
         if (userList == null) {
             userList = new ArrayList<>();
         }
         userList.clear();
-        userList.addAll(_userList);
+        userList.addAll(userList);
 
         if (userAdapter != null) {
             userAdapter.setListData(userList);

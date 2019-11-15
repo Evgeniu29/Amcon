@@ -3,7 +3,6 @@ package com.paad.amconsoft.userlist;
 import android.content.Context;
 import android.content.Intent;
 
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,32 +12,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.paad.amconsoft.AdapterInterface;
 import com.paad.amconsoft.DetailActivity;
 import com.paad.amconsoft.R;
 import com.paad.amconsoft.model.User;
 
 import java.util.List;
 
-import static android.content.Context.MODE_PRIVATE;
 import static androidx.core.content.ContextCompat.startActivity;
-import static com.paad.amconsoft.LoginActivity.PREF_LOGIN;
 
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder>  implements AdapterInterface {
 
     private List<User> userList;
     private OnUserClickListener listener;
     Context context;
-
-    public UserAdapter(UserFragment userFragment, List<User> users, OnUserClickListener listener) {
-
-    }
+    String name;
 
     public UserAdapter(Context  context,  List<User> dataList, OnUserClickListener listener) {
         this.context = context;
         this.userList = dataList;
         this.listener = listener;
-
     }
 
     @NonNull
@@ -66,14 +60,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         return userList.size();
     }
 
-    public void setListData(List<User> _userList) {
-        userList = _userList;
+    public void setListData(List<User> userList) {
+        userList = userList;
         notifyDataSetChanged();
-
     }
 
 
-    class MyViewHolder extends RecyclerView.ViewHolder implements com.paad.amconsoft.userlist.MyViewHolder {
+
+
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
         private LinearLayout item;
 
@@ -86,27 +81,20 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             item = itemView.findViewById(R.id.user_item);
 
             userName = itemView.findViewById(R.id.user_name);
-
-
-
         }
-
 
         public void onBind(User user) {
 
             userName.setText(user.getName());
 
-            final String name = user.getName();
+            name = user.getName();
 
 
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(context, DetailActivity.class);
-
-                    intent.putExtra("name", name);
-                    startActivity(context, intent, null);
+                    buttonPressed();
 
                 }
             });
@@ -115,6 +103,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
 
 
+    }
+
+    @Override
+    public void buttonPressed() {
+
+
+        Intent intent = new Intent(context, DetailActivity.class);
+
+        intent.putExtra("name", name);
+        startActivity(context, intent, null);
     }
 
 

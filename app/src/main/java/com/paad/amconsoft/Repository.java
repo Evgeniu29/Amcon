@@ -34,8 +34,8 @@ public class Repository {
     Context context;
 
 
-    public Repository(Context _context) {
-        context = _context;
+    public Repository(Context context) {
+        this.context = context;
 
         service = ApiClient.getRetrofitInstance().create(ApiService.class);
 
